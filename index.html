@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>মা মিষ্টান্ন ভান্ডার</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<div class="logo">মা মিষ্টান্ন ভান্ডার</div>
+<nav>
+<a href="#home">Home</a>
+<a href="#products">Products</a>
+<a href="#wishlistSection">Wishlist</a>
+<a href="#about">About</a>
+<a href="#reviews">Reviews</a>
+</nav>
+<div class="header-buttons">
+<button id="darkBtn">🌙</button>
+<button id="wishBtn">❤️ <span id="wishCount">0</span></button>
+<button id="cartBtn">🛒 <span id="cartCount">0</span></button>
+</div>
+</header>
+
+<section class="hero" id="home">
+<div class="hero-content">
+<h1>মা মিষ্টান্ন ভান্ডার</h1>
+<p>সুস্বাদু মিষ্টি, খাজা-গজা, মোরালি ও মজাদার নাশতা। আপনার পছন্দের খাবার অর্ডার করুন সহজেই।</p>
+<a href="#products" class="hero-btn">খাবার দেখুন</a>
+</div>
+</section>
+
+<section class="products-section" id="products">
+<h2 class="section-title">আমাদের খাবার</h2>
+<div class="controls">
+<input type="text" id="search" placeholder="খাবার খুঁজুন...">
+<select id="category">
+<option value="all">সব খাবার</option>
+<option value="mishti">সাদা ও লাল মিষ্টি</option>
+<option value="khaja-goja">খাজা ও গজা</option>
+<option value="morali">লাল ও সাদা মোরালি</option>
+<option value="nasta">নাশতা</option>
+</select>
+<select id="sort">
+<option value="default">Default Sorting</option>
+<option value="low">Price: Low to High</option>
+<option value="high">Price: High to Low</option>
+<option value="name">Name: A to Z</option>
+</select>
+</div>
+<div class="products" id="productsContainer"></div>
+</section>
+
+<section class="products-section" id="wishlistSection">
+<h2 class="section-title">❤️ আমার পছন্দের খাবার</h2>
+<div class="products" id="wishlistContainer"></div>
+</section>
+
+<section class="about" id="about">
+<h2 class="section-title">অর্ডার করার নিয়ম</h2>
+<p>মা মিষ্টান্ন ভান্ডার থেকে অর্ডার করতে নিচের ধাপগুলো অনুসরণ করুন।</p>
+<div class="order-steps">
+<p>১. পছন্দের খাবার বেছে নিন।</p>
+<p>২. Add To Cart বাটনে চাপ দিন।</p>
+<p>৩. কার্ট খুলে খাবারের পরিমাণ ঠিক করুন।</p>
+<p>৪. WhatsApp-এ অর্ডার করুন বাটনে চাপ দিন।</p>
+<p>৫. নাম, মোবাইল নম্বর ও ঠিকানা লিখুন।</p>
+<p>৬. অর্ডার পাঠান বাটনে চাপ দিন।</p>
+</div>
+</section>
+
+<section class="reviews" id="reviews">
+<h2 class="section-title">গ্রাহকদের মতামত</h2>
+<div class="review-grid">
+<div class="review-card">
+<div class="stars">★★★★★</div>
+<p>খাবারের মান ও পরিবেশন খুবই ভালো।</p>
+<strong>Demo Customer 1</strong>
+</div>
+<div class="review-card">
+<div class="stars">★★★★★</div>
+<p>সুস্বাদু খাবার এবং সহজ অর্ডার সিস্টেম।</p>
+<strong>Demo Customer 2</strong>
+</div>
+<div class="review-card">
+<div class="stars">★★★★☆</div>
+<p>ওয়েবসাইটটি ব্যবহার করা খুব সহজ।</p>
+<strong>Demo Customer 3</strong>
+</div>
+</div>
+</section>
+
+<div class="cart-panel" id="cartPanel">
+<div class="cart-header">
+<h2>আপনার কার্ট</h2>
+<button class="close-cart" id="closeCart">✕</button>
+</div>
+<div id="cartItems"></div>
+<div class="cart-footer">
+<p><span>Subtotal:</span><span>৳<span id="subtotal">0</span></span></p>
+<p><span>Delivery Charge:</span><span>৳<span id="delivery">60</span></span></p>
+<h3>সর্বমোট: ৳<span id="cartTotal">0</span></h3>
+<button class="checkout" id="checkout">🛒 WhatsApp-এ অর্ডার করুন</button>
+<button class="clear-cart" id="clearCart">Clear Cart</button>
+</div>
+</div>
+
+<div id="overlay"></div>
+
+<div class="order-form" id="orderForm">
+<div class="order-box">
+<h2>ক্রেতার তথ্য</h2>
+<input type="text" id="customerName" placeholder="আপনার নাম">
+<input type="tel" id="customerPhone" placeholder="মোবাইল নম্বর">
+<textarea id="customerAddress" placeholder="সম্পূর্ণ ঠিকানা"></textarea>
+<textarea id="customerNote" placeholder="অতিরিক্ত তথ্য (ঐচ্ছিক)"></textarea>
+<div class="order-buttons">
+<button class="cancel-order" id="cancelOrder">বাতিল</button>
+<button class="send-order" id="sendOrder">📲 অর্ডার পাঠান</button>
+</div>
+</div>
+</div>
+
+<div class="order-form" id="quickViewModal">
+<div class="order-box">
+<button id="closeQuickView">✕</button>
+<div id="quickViewContent"></div>
+</div>
+</div>
+
+<div id="toast"></div>
+<button id="backToTop" title="Back to Top">↑</button>
+
+<footer>
+<p>© 2026 মা মিষ্টান্ন ভান্ডার। সর্বস্বত্ব সংরক্ষিত।</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
